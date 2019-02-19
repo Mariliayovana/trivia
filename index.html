@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>trivia</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Asap:700,700italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div id="divEntrada" class="pantalla-entrada">
+        <div class="background">
+          <div class="star star-1" id="firststar"></div>
+          <div class="fof-wrapper">
+            <div class="animated-bounce mybounce">
+              <div class="fof-wrapper-inner bounceInLeft">
+                <img src="http://redonion.se/img/codepen/fof/fof-ball3.png" width="372" height="372" class="fof-ball" />
+              <div id="fireplace"></div>
+              </div><!--fof-wrapper-inner-->
+            </div><!--animated bounce-->
+          </div><!--fof-wrapper-->
+          <h1 class="tlt tlt-top" data-in-effect="flipInY" >TRIVIA</h1>
+          <h1 class="tlt" data-in-effect="flipInY">PICHANGUERA</h1>
+          <button id="into" class="btn-jugar">JUGAR</button>
+        </div><!--background-->
+    </div>
+    
+    <div id="divSaludo" class="pantalla-saludo">
+      <div class="soccer"></div>
+      <h1 class="bienvenida"> BIENVENIDO </h1>
+      <p class="desafio"> Estas preparad@ para este desafio </p>
+      <p2> JUGADOR </p2>
+      <input id= "user" type="text"/>
+      <button id="next">siguiente</button>
+    </div>
+    
+    <div id="divOpciones" class="pantalla-opciones">
+      <h1 class="titulo">
+        VEAMOS QUE TAN HINCHA ERES EN LA CANCHA 
+        <span id="spanNombre"></span>
+      </h1>
+      <h2 class="sub-titulo">CATEGORIAS </h2>
+      <button id="btnJugadores" class="btn">Jugadores</button>
+      <button id="btnEquipos" class="btn">Equipos</button>  
+    </div>
+    
+    <div id="divTrivia" class="pantalla-trivia">
+      
+      <div id="player" class="trivia-jugadores">
+        <div id="q1Player">
+          <h1 class="question">¿Quién fue el mejor jugador de la Copa Mundial 2018?</h1>
+          <p class="opt Q1">
+          <input type="radio" name="p1-player" value="0" class="circle opt">Cristiano Ronaldo<br/>
+          <input type="radio" name="p1-player" value="1">Lucas Modric<br/>
+          <input type="radio" name="p1-player" value="0">Lionel Messi<br/>
+          <input type="radio" name="p1-player" value="0">Neymar<br/></p>
+          <button id="btn1-player" class="btn">siguiente</button>
+        </div>
+
+        <div id="q2Player">
+          <h1 class="question Player">¿Quién es el máximo goleador histórico de Brasil?</h1>
+          <p class="opt question">
+          <input type="radio" name="p2-player" value="0"/>Ronaldo<br/>
+          <input type="radio" name="p2-player" value="0">Neymar<br/>
+          <input type="radio" name="p2-player" value="1">Pelé<br/>
+          <input type="radio" name="p2-player" value="0">Romario<br/></p>
+          <button id="btn2-player" class="btn">siguiente</button>
+        </div>
+
+        <div id="q3Player">
+          <h1 class="question">¿Qué jugador ha ganado más veces la UEfA Champions League?</h1>
+          <p class="opt question">
+          <input type="radio" name="p3-player" value="0">Andres Iniesta<br/>
+          <input type="radio" name="p3-player" value="0">Andrea Pirlo<br/>
+          <input type="radio" name="p3-player" value="0">Luis Suarez<br/>
+          <input type="radio" name="p3-player" value="1">Cristiano Ronaldo<br/></p>
+          <button id="btn3-player" class="btn">siguiente</button>
+        </div>
+      </div>
+      
+      <div id="team" class="trivia-equipos">    
+        <div id="q1Team" class="questio 1 Team">
+          <h1 class="question">¿Qué equipo sudamericano tiene mas Copas Libertadores?</h1>
+          <p class="opt Q1">
+            <input type="radio" name="p1-team" value="1">Independiente<br/>
+            <input type="radio" name="p1-team" value="0">Boca Junior<br/>
+            <input type="radio" name="p1-team" value="0">Colo Colo<br/>
+            <input type="radio" name="p1-team" value="0">Alianza Lima<br/>
+          </p>
+          <button id="btn1-team" class="btn">siguiente</button>
+        </div>
+
+        <div id="q2Team" class="question 2 Team">
+          <h1 class="question Team">¿Quién es el último campeón de la Copa Munial?</h1>
+          <p class="opt question">
+            <input type="radio" name="p2-team" value="1">Francia<br/>
+            <input type="radio" name="p2-team" value="0">Croacia<br/>
+            <input type="radio" name="p2-team" value="0">Argentina<br/>
+            <input type="radio" name="p2-team" value="0">Colombia<br/>
+          </p>
+          <button id="btn2-team" class="btn">siguiente</button>
+        </div>
+
+        <div id="q3Team" class="question 3 Team">
+          <h1 class="question">¿Qué equipo tiene mas UEfA Champions League?</h1>
+          <p class="opt question">
+            <input type="radio" name="p3-team" value="0">Manchester United<br/>
+            <input type="radio" name="p3-team" value="0">Barcelona<br/>
+            <input type="radio" name="p3-team" value="1">Real Madrid<br/>
+            <input type="radio" name="p3-team" value="0">Juventus<br/>
+          </p>
+          <button id="btn3-team" class="btn">siguiente</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</hml>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

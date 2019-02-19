@@ -1,0 +1,367 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  display:block;
+  width:100%;
+  height:100vh;
+}
+
+.background{
+    background-image:url('http://redonion.se/img/codepen/fof/background-galaxy.jpg');
+    background-repeat: repeat;
+    width: 100%; 
+    height: 100%;
+    min-height: 1000px;
+    position: relative;
+    background-position: 0px 0px;
+    animation: animatedBackground 10s linear infinite;
+  text-align:center;
+}
+
+  @keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -300px 0; }
+  }
+/*FOF-WRAPPER----------------------------------------*/  
+.fof-wrapper{
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    margin-left: -185px;
+    margin-top: -185px;
+    box-sizing:border-box;
+    position: absolute;
+  }
+
+/*FOF-WRAPPER-INNER----------------------------------*/
+  .fof-wrapper-inner:after, .fof-wrapper-inner:before{
+    width:370px;
+    height:370px;
+    border-radius:50%;
+    content:'';
+    display:block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -185px;
+    margin-top: -185px;
+    animation: fireanimation 1s ease-in-out infinite alternate;\
+    transform:rotate(-90deg);
+    z-index: 0;
+  }
+
+  .fof-wrapper-inner:before{
+  animation: fireanimation .65s ease-in-out infinite alternate;
+  background: linear-gradient(to right,  rgba(255,246,204,0.5) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80fff6cc', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+  z-index: 1;
+  }
+
+/*FOF-BALL-------------------------------------------*/
+.fof-ball{
+    display:block;
+    margin:0 auto;
+    box-sizing:border-box;
+    animation:spin 2s linear infinite;
+   }
+
+/*MORE ANIMATIONS--------------------------------------*/
+  .animated-bounce{
+      animation-duration: 2s;
+      animation-fill-mode: both;
+     animation-iteration-count: infinite;
+    }
+
+/*ROTATE*/
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+  @keyframes mybounce {
+    from, 20%, 53%, 80%, to {
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      transform: translate3d(0,0,0);
+    }
+
+    40%, 43% {
+      animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      transform: translate3d(0, -40px, 0);
+    }
+
+    70% {
+      animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      transform: translate3d(0, -30px, 0);
+    }
+
+    90% {
+      transform: translate3d(0,-2px,0);
+    }
+  }
+
+  .mybounce {
+    animation-name: mybounce;
+    transform-origin: center bottom;
+  }
+
+/*bounce in left*/
+  @keyframes bounceInLeft {
+    from, 60%, 75%, 90%, to {
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+      transform: translate3d(-3000px, 0, 0);
+    }
+
+    60% {
+      transform: translate3d(25px, 0, 0);
+    }
+
+    75% {
+      transform: translate3d(-10px, 0, 0);
+    }
+
+    90% {
+      transform: translate3d(5px, 0, 0);
+    }
+
+    to {
+      transform: none;
+    }
+  }
+
+  .bounceInLeft {
+    animation-name: bounceInLeft;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+  }
+
+/*FIRE*/
+  .fire {
+    animation: fireanimation 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes fireanimation{
+  0% {box-shadow:
+     0 -2px 20px rgba(0, 15, 132, 0.72),
+      0 -15px 15px #fefcc9,
+    0 5px 5px #feec85,
+    0 -25px 45px #ffae34,
+    0 0px 50px #ec760c,
+
+    0 0 20px #fefcc9,
+    10px -10px 30px #feec85,
+    -20px -20px 40px #ffae34,
+    20px -40px 50px #ec760c,
+
+    -20px -60px 60px #cd4606,
+    0 -80px 70px #973716,
+    10px -90px 80px #451b0e;
+    opacity:0.3;
+  }
+  100% {box-shadow:
+     0 0px 20px rgba(0, 15, 132, 0.72),
+      0 -10px 15px #fefcc9,
+    0 5px 2px #feec85,
+    0 -23px 40px #ffae34,
+    0 2px 50px #ec760c,
+
+    0 0 20px #fefcc9,
+    10px -10px 30px #fefcc9,
+    -20px -20px 40px #feec85,
+    22px -42px 60px #ffae34,
+
+    -22px -58px 50px #ec760c,
+    0 -82px 80px #cd4606,
+    10px -90px 80px  #973716;
+    opacity:0.65;
+  }
+  }
+
+/*STARS-------------------------------------------------------*/
+#firststar{
+  display:none;
+}
+  .star {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    border-radius:50%;
+    z-index: -1;
+    z-index: 2;
+  }
+
+  .star-1 {
+    width:5px;height:5px;
+    background: #999;
+    box-shadow: 0px 0px 4px rgba(255,255,255,0.8),
+    0px 0px 12px rgba(255,255,255,0.8),
+    0px 0px 50px rgba(255,255,255,0.6),
+    0px 0px 16px rgba(255,255,255,0.6);
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,251,153,1) 0%, rgba(255,253,204,0.5) 50%, rgba(255,255,255,0.6) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,251,153,1) 0%,rgba(255,253,204,0.5) 50%,rgba(255,255,255,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  rgba(255,251,153,1) 0%,rgba(255,255,255,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffb99', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+
+/*TAIL-------------------------------------------------*/
+  #fireplace{
+    position: absolute;
+    height: auto;
+    width: auto;
+    min-height: 370px;
+    top: 200px;
+    left: 370px;
+    z-index: -25;
+  }
+
+  .FireImage{
+    position: absolute;
+    top:-550px;
+    right: 200px;
+  }
+
+/*TITLE--------------------------------------------------------*/
+  h1{
+    margin:0 auto;
+    padding:1em 0 0 0;
+  }
+  .tlt{
+    font-family:'Asap', Helvetica, Arial, sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    font-style:italic;
+    text-align: center;
+  }
+
+.btn-jugar {
+  margin-top: 500px;
+  padding:20px;
+  border: 0;
+  background-color:orange;
+  color: white;
+  font-size:50px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+  .tlt, .tlt span{
+    color:#FFF;
+    background: -webkit-linear-gradient(top, #f5f6f6 0%, #dbdedc 21%, #fff 49%, #787979 80%, #f5f6f6 100%); /* Chrome10-25,Safari5.1-6 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tlt.tlt-top{
+    font-size: 80px;
+    margin-bottom:-90px;
+  }
+
+/*pantalla saludo*/
+.soccer {
+  background: url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg);
+  background-size: 100px 100px;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  animation:roll 6.5s infinite;
+}
+
+@keyframes roll { 
+  0% {left:0px; -webkit-transform: rotate(-360deg);}
+  50% {left:1000px; -webkit-transform: rotate(360deg);}
+  100% {left:0px; -webkit-transform: rotate(-360deg);}
+}
+
+.world-cup {
+  color: #82AE6F;
+  text-align: center;
+}
+.bienvenida{
+  color: mediumBlue;
+  text-align: center;
+  font-size: 60px;
+  border: 10px inset mintCream;
+  background-color:deepSkyBlue;
+  font-family: Abyssinica SIL;
+  padding: 0;
+}
+.desafio {
+  color: black;
+  text-align: center;
+  background-color:yellow;
+  font-size:30px;
+  font-style:oblique;
+  font-weight:700;
+  font-family:roboto condensed;
+}
+p2 {
+  color: black;
+  font-size: 20px;
+  text-align:center;
+  font-weight:700;
+  font-family:roboto condensed;
+}
+.pantalla-saludo {
+  width:100%;
+  height:100vh;
+  padding:30px;
+  padding-top:50px;
+  display:none;
+  background: url(https://i.pinimg.com/originals/f7/a1/c6/f7a1c6d52f622bc3b1527a0783bed92a.jpg) center; 
+  
+}
+
+/*PANTALLA OPCIONES*/
+.titulo {
+  font-size: 30px;
+  color: #86f2f4;
+  font-family: arial;
+  text-align: center;
+  margin: 0;
+  padding-top: 50px;
+}
+.sub-titulo {
+  font-size: 70px;
+  color: white;
+}
+.btn {
+  font-size: 30px;
+  color: white;
+  background-color: #5a3393;
+  text-align: center; /*alineación del texto*/
+  width: 500px; /*ancho del elemento*/
+  margin: 10px; /*espacio externo*/
+  padding: 10px; /*espacio interno*/
+  border: 0; /*tamño del borde*/
+  border-radius: 50px; /*borde redondeado*/
+  cursor:pointer;
+}
+.pantalla-opciones {
+  background: url('https://k33.kn3.net/taringa/C/3/6/C/1/2/-Christ-/CD4.jpg');
+  position: center;
+  text-align:center;
+  width:100vw;
+  height: 100vh;
+  display:none;
+}
+
+.trivia-jugadores {
+  display: none;
+}
+
+.trivia-equipos {
+  display: none;
+}
+
+.pantalla-trivia {
+  color: white;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  display:none;
+}
+
+#q1Player, #q2Player, #q3Player, #q1Team, #q2Team, #q3Team {
+  display: none;
+}
